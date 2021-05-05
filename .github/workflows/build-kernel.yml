@@ -13,6 +13,8 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: check cpu cores
+      run:  cat /proc/cpuinfo
     - name: pre-install
       run:  sudo apt update && sudo apt install linux-headers-$(uname -r)
     - name: install
